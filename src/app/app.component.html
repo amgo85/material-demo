@@ -4,7 +4,7 @@
   (change)="onChange($event)"
 >Show Details</mat-checkbox>
 
-<br>
+<br><br>
 <div *ngIf="showDetails.checked" >Some Details...</div>
 <br>
 <mat-radio-group aria-label="Select an option" value="2">
@@ -12,8 +12,7 @@
   <mat-radio-button value="2">Female</mat-radio-button>
 </mat-radio-group>
 
-<br>
-<br>
+<br><br>
 <mat-form-field appearance="fill">
   <mat-label>Favorite Color</mat-label>
   <mat-select [(ngModel)]="color">
@@ -23,9 +22,7 @@
   </mat-select>
 </mat-form-field>
 
-<br>
-<br>
-
+<br><br>
 <mat-form-field class="example-full-width" appearance="fill">
   <mat-label>Username</mat-label>
   <input 
@@ -39,16 +36,12 @@
   <mat-error *ngIf="username.invalid && username.errors">The Username field is required</mat-error>
 </mat-form-field>
 
-<br>
-<br>
-
+<br><br>
 <mat-form-field>
   <textarea matInput cdkTextareaAutosize rows="2"></textarea>
 </mat-form-field>
 
-<br>
-<br>
-
+<br><br>
 <mat-form-field appearance="fill">
   <mat-label>Choose a date</mat-label>
   <input 
@@ -60,3 +53,80 @@
   <mat-datepicker-toggle matSuffix [for]="birthdate"></mat-datepicker-toggle>
   <mat-datepicker #birthdate touchUi="true"></mat-datepicker>
 </mat-form-field>
+
+
+<br><br>
+<mat-icon aria-hidden="false" aria-label="" fontIcon="home"></mat-icon>
+
+<br><br>
+<section>
+  <button mat-raised-button>Basic</button>
+  <button mat-raised-button color="primary">Primary</button>
+  <button mat-raised-button color="accent">Accent</button>
+  <button mat-raised-button color="warn">Warn</button>
+  <button mat-raised-button disabled>Disabled</button>
+  <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+</section>
+
+<br><br>
+<!-- <mat-divider></mat-divider> -->
+<section>      
+  <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+    <mat-icon>delete</mat-icon>
+  </button>
+
+  <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+    <mat-icon>bookmark</mat-icon>
+  </button>
+
+  <button mat-fab color="warn" aria-label="Example icon button with a home icon">
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <button mat-fab disabled aria-label="Example icon button with a heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+
+</section>
+<!-- <mat-divider></mat-divider> -->
+
+<br><br>
+<chips-autocomplete-example></chips-autocomplete-example>
+
+<br><br> <!-- Does not work properly -->
+<mat-chip-list aria-label="Level selection">
+  <mat-chip 
+    *ngFor="let category of categories"
+    (click)="selectCategory(category)"
+    [selected]="category.selected"
+  >{{ category.name }}</mat-chip>
+  <!-- <mat-chip color="accent" selected>Accent fish</mat-chip> -->
+</mat-chip-list>
+
+<br><br>
+<mat-card>
+  <mat-card-content>
+    <h2 class="example-h2">Result</h2>
+      <mat-progress-spinner
+        class="example-margin"
+        [color]="color"
+        mode="determinate"
+        [value]="progress">
+      </mat-progress-spinner>
+  </mat-card-content>
+</mat-card>
+
+
+<br><br>
+<mat-card>
+  <mat-card-content>
+    <h2 class="example-h2-indeterminate">Result</h2>
+      <mat-progress-spinner
+        *ngIf="isLoading"
+        class="example-margin"
+        [color]="color"
+        mode="indeterminate">
+      </mat-progress-spinner>
+  </mat-card-content>
+</mat-card>
+
