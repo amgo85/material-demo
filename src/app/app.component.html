@@ -1,3 +1,12 @@
+<mat-tab-group>
+  <mat-tab label="Billing"> Billing Content </mat-tab>
+  <mat-tab label="Shipping"> Shipping Content </mat-tab>
+  <mat-tab label="More"> Content 3 </mat-tab>
+</mat-tab-group>
+
+
+<br><br>
+
 <mat-checkbox
   #showDetails
   [checked]="isChecked"
@@ -130,3 +139,36 @@
   </mat-card-content>
 </mat-card>
 
+<br><br>
+<span matTooltip="Here is my tooltip"
+      matTooltipPosition="right" >Some Text</span>
+
+
+<br><br>
+<app-dialog-animations-example></app-dialog-animations-example>
+
+
+<button 
+  (click)="openDialog()"
+  mat-raised-button>Open Dialogue</button>
+
+
+<br><br>
+<sidenav-autosize-example></sidenav-autosize-example>
+
+<br><br>
+<mat-slider aria-label="unit(s)"></mat-slider>
+
+<br><br>
+<table-basic-example></table-basic-example>
+
+<br><br>
+
+
+<h1 class="mat-headline">Heading 1</h1>
+<p class="mat-body-1">Here is the a text to check</p>
+<h2 class="title">Heading 2</h2>
+<h3 class="subheading-2">Heading 3</h3>
+<br><br>
+<button mat-raised-button color="primary">Button 1</button>
+<button mat-raised-button color="accent">Button 1</button>
